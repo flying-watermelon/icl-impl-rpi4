@@ -10,17 +10,17 @@ void _printUsageAndExit();
 
 int main(int argc, char *argv[]) {
     if (argc < 2) {
-        printUsageAndExit();
+        _printUsageAndExit();
     }
 
     char *action = argv[1];
 
     if (strcmp(action, "write") == 0) {
-        write();
+        _write();
     } else if (strcmp(action, "read") == 0) {
-        read();
+        _read();
     } else {
-        printUsageAndExit();
+        _printUsageAndExit();
     }
 
     return 0;
@@ -31,7 +31,7 @@ void _read() {
 
     icl_i2c_setBaudRate(10000000);
     char buf[24];
-    icl_i2c_readBytes(0x04, 23, buf);
+    icl_i2c_readBytes(0x04, 23, (uint8_t *)buf);
     printf("%s\n", buf);
 
     icl_rpi4_finalize();
@@ -42,7 +42,7 @@ void _write() {
 
     icl_i2c_setBaudRate(10000000);
     char buf[24] = "hello world, hello i2c.";
-    icl_i2c_writeBytes(0x04, 23, buf);
+    icl_i2c_writeBytes(0x04, 23, (uint8_t *)buf);
 
     icl_rpi4_finalize();
 }

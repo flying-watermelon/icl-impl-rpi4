@@ -2,6 +2,7 @@
 #include "data.h"
 #include "utilities.h"
 
+#include <ICL/ICL.h>
 #include <ICL/ICL_impl_rpi4.h>
 
 #include <fcntl.h>
@@ -48,7 +49,7 @@ int icl_rpi4_initialize(unsigned int initializeFlags) {
         _initializeSpi();
     }
 
-    return 0;
+    return ICL_NO_ERROR;
 }
 
 int icl_rpi4_finalize() {
@@ -62,7 +63,7 @@ int icl_rpi4_finalize() {
 
     munmap((void *)periBase, PERI_SIZE);
 
-    return 0;
+    return ICL_NO_ERROR;
 }
 
 void _initializeI2c() {

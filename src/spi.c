@@ -12,6 +12,8 @@ int icl_spi_setSpeed(int hz) {
         divider = 0x0002;
     }
     writeRegister(spiBase + SPI_CLK, divider);
+
+    return ICL_NO_ERROR;
 }
 
 int icl_spi_transferBytes(int chip, size_t count, uint8_t *send, uint8_t *received) {
@@ -41,5 +43,5 @@ int icl_spi_transferBytes(int chip, size_t count, uint8_t *send, uint8_t *receiv
 
     writeRegisterMasked(cs, 0, SPI_CS_TA);
 
-    return 0;
+    return ICL_NO_ERROR;
 }

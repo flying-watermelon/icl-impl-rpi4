@@ -53,11 +53,11 @@ int icl_rpi4_initialize(unsigned int initializeFlags) {
 
 int icl_rpi4_finalize() {
     if (i2cBase != NULL) {
-        _finalize_i2c();
+        _finalizeI2c();
     }
 
     if (spiBase != NULL) {
-        _finalize_spi();
+        _finalizeSpi();
     }
 
     munmap((void *)periBase, PERI_SIZE);

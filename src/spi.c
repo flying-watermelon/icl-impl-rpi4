@@ -15,8 +15,8 @@ int icl_spi_setSpeed(int hz) {
 }
 
 int icl_spi_transferBytes(int chip, size_t count, uint8_t *send, uint8_t *received) {
-    volatile unsigned *cs = spiBase + SPI_CS;
-    volatile unsigned *fifo = spiBase + SPI_FIFO;
+    volatile unsigned char *cs = spiBase + SPI_CS;
+    volatile unsigned char *fifo = spiBase + SPI_FIFO;
 
     size_t sentBytes = 0;
     size_t receivedBytes = 0;
@@ -40,4 +40,6 @@ int icl_spi_transferBytes(int chip, size_t count, uint8_t *send, uint8_t *receiv
         ;
 
     writeRegisterMasked(cs, 0, SPI_CS_TA);
+
+    return 0;
 }

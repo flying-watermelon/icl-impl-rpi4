@@ -47,6 +47,8 @@ int icl_rpi4_initialize(unsigned int initialize_flags) {
     if (initialize_flags | ICL_RPI4_INITIALIZE_SPI) {
         _initialize_spi();
     }
+
+    return 0;
 }
 
 int icl_rpi4_finalize() {
@@ -78,7 +80,7 @@ void _finalize_i2c() {
 void _initialize_spi() {
     spi_base = peri_base + SPI_BASE;
 
-    volatile unsigned *cs = spi_base + SPI_CS;
+    volatile unsigned char *cs = spi_base + SPI_CS;
 
     select_gpio_pin_function(SPI_PIN_CE0, GPIO_FSEL_ALT0);
     select_gpio_pin_function(SPI_PIN_CE1, GPIO_FSEL_ALT0);
@@ -87,7 +89,7 @@ void _initialize_spi() {
     select_gpio_pin_function(SPI_PIN_MISO, GPIO_FSEL_ALT0);
 
     write_register(cs, 0);
-    wirte_register(cs, SPI_CS_CLEAR, SPI_CS_CLEAR);
+    write_register(cs, SPI_CS_CLEAR, SPI_CS_CLEAR);
 }
 
 void _finalize_spi() {

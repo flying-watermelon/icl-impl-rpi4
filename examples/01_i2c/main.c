@@ -32,6 +32,8 @@ void _read() {
     icl_i2c_setBaudRate(10000000);
     char buf[24];
     icl_i2c_readBytes(0x04, 23, (uint8_t *)buf);
+    buf[23] = '\0';
+
     printf("%s\n", buf);
 
     icl_rpi4_finalize();

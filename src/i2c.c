@@ -12,10 +12,14 @@ int icl_i2c_setBaudRate(int baud) {
         divider = 0x0002;
     }
     writeRegister(i2cBase + I2C_DIV, divider);
+
+    return 0;
 }
 
 int icl_i2c_writeBytes(uint16_t slaveAddress, size_t count, const uint8_t *bytes) {
+    return 0;
 }
 
 int icl_i2c_readBytes(uint16_t slaveAddress, size_t count, uint8_t *byte) {
+    return 0;
 }

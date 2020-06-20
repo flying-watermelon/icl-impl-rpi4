@@ -11,6 +11,8 @@ int main() {
     char buf[24] = "hello world, hello spi.";
     icl_spi_transferBytes(0, 23, (uint8_t *)buf, (uint8_t *)buf);
 
+    printf("%s\n", buf);
+
     icl_rpi4_finalize();
 
     return 0;

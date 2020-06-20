@@ -89,7 +89,7 @@ void _initialize_spi() {
     select_gpio_pin_function(SPI_PIN_MISO, GPIO_FSEL_ALT0);
 
     write_register(cs, 0);
-    write_register(cs, SPI_CS_CLEAR, SPI_CS_CLEAR);
+    write_register_masked(cs, SPI_CS_CLEAR, SPI_CS_CLEAR);
 }
 
 void _finalize_spi() {

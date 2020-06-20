@@ -1,7 +1,6 @@
 #ifndef __ICL_IMPL_RPI4_H__
 #define __ICL_IMPL_RPI4_H__
 
-#define ICL_RPI4_NO_ERROR 0
 #define ICL_RPI4_INITIALIZATION_ERROR 1
 
 #define ICL_RPI4_INITIALIZE_I2C 0x1

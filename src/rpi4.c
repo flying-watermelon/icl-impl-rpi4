@@ -1,11 +1,12 @@
-#include <fcntl.h>
-#include <sys/mman.h>
-#include <unistd.h>
+#include "context.h"
+#include "data.h"
+#include "utilities.h"
 
 #include <ICL/ICL_impl_rpi4.h>
 
-#include "data.h"
-#include "utilities.h"
+#include <fcntl.h>
+#include <sys/mman.h>
+#include <unistd.h>
 
 void _initialize_i2c();
 void _finalize_i2c();

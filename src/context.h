@@ -3,9 +3,9 @@
 
 #include <stdint.h>
 
-extern volatile unsigned char *peri_base;
-extern volatile unsigned char *gpio_base;
-extern volatile unsigned char *i2c_base;
-extern volatile unsigned char *spi_base;
+extern volatile unsigned char *periBase;
+extern volatile unsigned char *gpioBase;
+extern volatile unsigned char *i2cBase;
+extern volatile unsigned char *spiBase;
 
 #endif

@@ -2,7 +2,7 @@
 
 #include <stddef.h>
 
-volatile unsigned char *peri_base = NULL;
-volatile unsigned char *gpio_base = NULL;
-volatile unsigned char *i2c_base = NULL;
-volatile unsigned char *spi_base = NULL;
+volatile unsigned char *periBase = NULL;
+volatile unsigned char *gpioBase = NULL;
+volatile unsigned char *i2cBase = NULL;
+volatile unsigned char *spiBase = NULL;

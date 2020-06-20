@@ -4,6 +4,8 @@
 #define PERI_BASE 0xFE000000
 #define PERI_SIZE 0x01800000
 
+#define CORE_CLOCK_HZ 1500000000
+
 #define GPIO_BASE        0x200000
 #define GPIO_FSEL0       0x00
 #define GPIO_FSEL_INPUT  0x0
@@ -19,6 +21,11 @@
 #define I2C_PIN_SCL 3
 
 #define I2C_BASE 0x804000
+#define I2C_S    0x04
+#define I2C_DLEN 0x08
+#define I2C_A    0x0C
+#define I2C_FIFO 0x10
+#define I2C_DIV  0x14
 
 #define SPI_PIN_CE0  8
 #define SPI_PIN_CE1  7

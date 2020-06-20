@@ -1,5 +1,5 @@
-#ifndef __REGISTER_H__
-#define __REGISTER_H__
+#ifndef __UTILITIES_H__
+#define __UTILITIES_H__
 
 static inline void writeRegister(volatile unsigned char *addr, unsigned value) {
     *((volatile unsigned *)addr) = value;
